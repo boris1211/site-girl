@@ -1,0 +1,539 @@
+/*==========================================
+        STYLE.CSS
+    Version Douce & Romantique — v2
+==========================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+
+    --rose-pale:#FFE4EC;
+    --rose-doux:#F8B4C8;
+    --rose-tendre:#F29CB7;
+    --rose-profond:#D9738F;
+    --rose-texte:#C25E7C;
+    --lavande:#EDE1FB;
+    --creme:#FFFBF9;
+    --texte:#5B4A4F;
+    --texte-clair:#8A757B;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:var(--creme);
+    color:var(--texte);
+
+}
+
+h1, h2, .mini{
+    font-family:'Playfair Display', serif;
+}
+
+/*==========================================
+            BACKGROUND
+==========================================*/
+
+.background{
+
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        150deg,
+        #FFF6F8 0%,
+        #FFE9F1 35%,
+        #FBF0FF 70%,
+        #FFF6F8 100%
+    );
+
+    z-index:-3;
+
+}
+
+.background::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:620px;
+    height:620px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle, var(--rose-doux), transparent 70%);
+
+    filter:blur(160px);
+
+    opacity:.55;
+
+    top:-200px;
+    left:-200px;
+
+    animation:move1 16s infinite alternate ease-in-out;
+
+}
+
+.background::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:680px;
+    height:680px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle, var(--lavande), transparent 70%);
+
+    filter:blur(180px);
+
+    opacity:.5;
+
+    bottom:-220px;
+    right:-200px;
+
+    animation:move2 19s infinite alternate ease-in-out;
+
+}
+
+@keyframes move1{
+    from{ transform:translate(0,0); }
+    to{ transform:translate(110px,90px); }
+}
+
+@keyframes move2{
+    from{ transform:translate(0,0); }
+    to{ transform:translate(-110px,-90px); }
+}
+
+/*==========================================
+            PARTICULES
+==========================================*/
+
+.stars,
+.stars2{
+
+    position:absolute;
+    inset:0;
+
+}
+
+.stars{
+
+    background-image:
+    radial-gradient(#ffffff 1.6px,transparent 1.6px);
+
+    background-size:48px 48px;
+
+    opacity:.6;
+
+    animation:starsMove 75s linear infinite;
+
+}
+
+.stars2{
+
+    background-image:
+    radial-gradient(var(--rose-doux) 1px,transparent 1px);
+
+    background-size:75px 75px;
+
+    opacity:.4;
+
+    animation:starsMove2 130s linear infinite;
+
+}
+
+@keyframes starsMove{
+    from{ transform:translateY(0); }
+    to{ transform:translateY(-400px); }
+}
+
+@keyframes starsMove2{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-350px); }
+}
+
+/*==========================================
+            SECTION ACCUEIL
+==========================================*/
+
+.home{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
+
+}
+
+/*==========================================
+            CARTE (glass)
+==========================================*/
+
+.glass{
+
+    width:720px;
+    max-width:95%;
+
+    padding:60px;
+
+    border-radius:36px;
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.9);
+
+    box-shadow:
+
+    0 22px 55px rgba(217,115,143,.15),
+    0 8px 25px rgba(242,156,183,.20);
+
+    transition:.45s;
+
+}
+
+.glass:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 28px 65px rgba(217,115,143,.20),
+    0 10px 35px rgba(242,156,183,.25);
+
+}
+
+/*==========================================
+            TEXTES
+==========================================*/
+
+.mini{
+
+    color:var(--rose-texte);
+
+    font-size:14px;
+
+    letter-spacing:5px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+    font-style:italic;
+
+}
+
+h1{
+
+    font-size:56px;
+    font-weight:600;
+
+    line-height:1.2;
+
+    margin-bottom:28px;
+
+    color:#B9587A;
+
+}
+
+h1 span{
+
+    color:var(--rose-profond);
+
+}
+
+p{
+
+    font-size:18px;
+
+    line-height:1.95;
+
+    color:var(--texte-clair);
+
+    margin-bottom:45px;
+
+}
+
+/*==========================================
+            BOUTON PRINCIPAL
+==========================================*/
+
+button{
+
+    padding:18px 60px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        var(--rose-doux),
+        var(--rose-profond)
+    );
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 12px 28px rgba(217,115,143,.35);
+
+}
+
+button:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+
+    0 18px 38px rgba(217,115,143,.45);
+
+}
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+/*==========================================
+        PAGE PRÉSENTATION
+==========================================*/
+
+.container{
+
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+
+    padding:70px 25px;
+
+}
+
+.section{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:32px;
+
+    padding:50px 45px;
+
+    margin-bottom:55px;
+
+    border:1px solid rgba(255,255,255,.9);
+
+    box-shadow:0 18px 40px rgba(217,115,143,.12);
+
+}
+
+.section h2{
+
+    text-align:center;
+
+    color:var(--rose-profond);
+
+    font-weight:600;
+
+    margin-bottom:28px;
+
+    font-size:38px;
+
+}
+
+.section p{
+
+    text-align:center;
+
+    line-height:2;
+
+    color:var(--texte-clair);
+
+    font-size:18px;
+
+    max-width:720px;
+
+    margin:0 auto;
+
+}
+
+/*==========================================
+        GALERIE PHOTOS (3 côte à côte)
+==========================================*/
+
+.photo-gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(3, 1fr);
+
+    gap:18px;
+
+}
+
+.photo-gallery .photo{
+
+    position:relative;
+
+    aspect-ratio:3/4;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 28px rgba(217,115,143,.18);
+
+    transition:.35s;
+
+}
+
+.photo-gallery .photo img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+
+}
+
+.photo-gallery .photo:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 36px rgba(217,115,143,.28);
+
+}
+
+.photo-gallery .photo:hover img{
+
+    transform:scale(1.06);
+
+}
+
+/*==========================================
+            BOUTONS DE DÉCISION
+==========================================*/
+
+.footer-text{
+
+    text-align:center;
+
+    margin-bottom:28px;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:var(--rose-texte);
+
+    font-family:'Playfair Display', serif;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    margin-top:20px;
+
+}
+
+#pardonner{
+
+    background:linear-gradient(135deg, var(--rose-doux), var(--rose-profond));
+
+}
+
+#nonpardonner{
+
+    background:linear-gradient(135deg,#CFCFCF,#8E8E8E);
+
+}
+
+/*==========================================
+            RESPONSIVE
+==========================================*/
+
+@media(max-width:768px){
+
+    .glass{
+        padding:35px;
+    }
+
+    h1{
+        font-size:38px;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+    button{
+        width:100%;
+    }
+
+    .section{
+        padding:35px 25px;
+    }
+
+    .section h2{
+        font-size:30px;
+    }
+
+    .photo-gallery{
+        grid-template-columns:1fr;
+    }
+
+    .photo-gallery .photo{
+        aspect-ratio:16/10;
+    }
+
+}

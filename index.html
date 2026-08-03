@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bienvenue mademoiselle Juliette</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+
+</head>
+
+<body>
+
+<div class="background">
+
+<div class="stars"></div>
+<div class="stars2"></div>
+
+</div>
+
+<section class="home">
+
+<div class="glass">
+
+<h3 class="mini">
+BIENVENUE SUR
+</h3>
+
+<h1>
+LA PLATEFORME<br>
+<span>JULIETTE</span>
+</h1>
+
+<p>
+
+Bonjour Juliette ❤️
+
+</p>
+
+<a href="presentation.html">
+
+<button>
+
+Commencer
+
+</button>
+
+</a>
+
+</div>
+
+</section>
+
+<script>
+
+const card=document.querySelector(".glass");
+
+document.addEventListener("mousemove",(e)=>{
+
+let x=(window.innerWidth/2-e.pageX)/40;
+
+let y=(window.innerHeight/2-e.pageY)/40;
+
+card.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`;
+
+});
+
+document.addEventListener("mouseleave",()=>{
+
+card.style.transform="rotateY(0deg) rotateX(0deg)";
+
+});
+
+</script>
+
+</body>
+</html>
